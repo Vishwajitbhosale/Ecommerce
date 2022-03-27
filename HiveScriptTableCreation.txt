@@ -1,0 +1,36 @@
+use foodmart;
+
+create table if not exists customers_dataset(id string,unique_id string,zip string,city string,state string)row format delimited fields terminated by ',' stored as textfile tblproperties("skip.header.line.count"="1");
+
+load data local inpath '/home/cloudera/Downloads/test/customers_dataset.csv' into table customers_dataset;
+
+
+create table if not exists geolocation(zip varchar(40),longitude varchar(40),latitiude varchar(40),city varchar(20),state varchar(20))row format delimited fields terminated by ',' stored as textfile tblproperties("skip.header.line.count"="1");
+
+load data local inpath '/home/cloudera/Downloads/test/geolocation_dataset.csv' into table geolocation;
+
+create table if not exists orderitem (order_id varchar(40),order_item_id varchar(20),product_id varchar(40),seller_id varchar(40),shipping_limit_date varchar(40), price varchar(20), fright_hight varchar(20))row format delimited fields terminated by ',' stored as textfile tblproperties("skip.header.line.count"="1");
+
+load data local inpath '/home/cloudera/Downloads/test/order_items_dataset.csv' into table orderitem;
+
+
+create table if not exists order_reviews(review_id varchar(50),order_id varchar(50),review_score varchar(50),review_comment_title varchar(50),review_creation_date varchar(50),review_answer_timestamp varchar(50))row format delimited fields terminated by ',' stored as textfile tblproperties("skip.header.line.count"="1");
+
+load data local inpath '/home/cloudera/Downloads/test/order_reviews_dataset.csv' into table order_reviews;
+
+create table if not exists orders(order_id varchar(50),customer_id varchar(50),order_status varchar(50),order_purchase_timestamp varchar(50),order_approved_at varchar(50),order_delivered_carrier_date varchar(50),order_delivered_customer_date varchar(50),order_estimated_delivery_date varchar(50))row format delimited fields terminated by ',' stored as textfile tblproperties("skip.header.line.count"="1");
+
+load data local inpath '/home/cloudera/Downloads/test/orders_dataset.csv' into table orders;
+
+create table product_dataset(product_id string,product_category_name string,product_name_lenght int,product_description_lenght int,product_photos_qty int,product_weight_g int,product_length_cm int,product_height_cm int,product_width_cm int)row format delimited fields terminated by ',' stored as textfile tblproperties("skip.header.line.count"="1");
+
+load data local inpath '/home/cloudera/Downloads/test/products_dataset.csv' into table product_dataset;
+
+
+create table if not exists sellers(seller_id varchar(50),seller_zip_code_prefix varchar(40),seller_city varchar(20),seller_state varchar(20))row format delimited fields terminated by ',' stored as textfile tblproperties("skip.header.line.count"="1");
+
+load data local inpath '/home/cloudera/Downloads/test/sellers_dataset.csv' into table sellers;
+
+create table if not exists product_category_name(product_category_name varchar(30),product_category_name_english varchar(30))row format delimited fields terminated by ',' stored as textfile tblproperties("skip.header.line.count"="1");
+
+load data local inpath '/home/cloudera/Downloads/test/product_category_name.csv' into table product_category_name;
