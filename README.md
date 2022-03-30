@@ -16,3 +16,5 @@ ed delivery date is due, the customer gets a satisfaction survey by email where 
 down some comments.
 
 Detailed information of project along with digrams is provided in the Project Description file.
+
+![image](https://user-images.githubusercontent.com/92929807/160750596-f09c362f-2cf4-49aa-9fbb-b500c35da428.png)
