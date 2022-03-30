@@ -17,4 +17,4 @@ down some comments.
 
 Detailed information of project along with digrams is provided in the Project Description file.
 
-![image](https://user-images.githubusercontent.com/92929807/160750596-f09c362f-2cf4-49aa-9fbb-b500c35da428.png)
+![DatabaseDiag](https://user-images.githubusercontent.com/92929807/160750984-b2e06f31-04ce-4600-9ce3-a602a42b4abb.png)
